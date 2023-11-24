@@ -3,6 +3,14 @@ public class BankAccount {
     public BankAccount(int startingBalance){
         balance = startingBalance;
     }
+
+    public BankAccount(int transferredBalance, int amountExpected){
+        int newBalance = transferredBalance;
+        int amountOnReceival = amountExpected;
+        newBalance = amountOnReceival + balance;
+
+    }
+    
     public void checkBalance(){
         System.out.println("Welcome. Your balance is " +balance);
     }
@@ -26,6 +34,7 @@ public class BankAccount {
 
     public static void main(String[] args){
         BankAccount savings = new BankAccount(30000);
+        BankAccount checkings = new BankAccount(3000, 3000);
         savings.checkBalance();
         savings.deposit(5000);
         savings.withdraw(23000);
